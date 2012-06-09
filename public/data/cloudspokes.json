@@ -28,7 +28,107 @@
                        "Java",
                        "Other"
                     ]
+                },
+                {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Page"
+                },
+                {
+                     "Name":"per_page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Number per Page"
                 }
+              ]
+           },
+           {
+              "MethodName":"GET Leaderboard this year",
+              "Synopsis":"This method allows you to retrieve the leaderboard by year",
+              "HTTPMethod":"GET",
+              "URI":"/leaderboard_this_year.json",
+              "RequiresOAuth":"N",
+              "parameters": [
+              {
+                   "Name":"category",
+                   "Required":"N",
+                   "Default":"",
+                   "Type":"enumerated",
+                   "Description":"Challenge Category",
+                   "EnumeratedList":[
+                       "Heroku",
+                       "Salesforce.com",
+                       "Google",
+                       "Box",
+                       "Mobile",
+                       "Node.Js",
+                       "Ruby",
+                       "JavaScript",
+                       "Java",
+                       "Other"
+                    ]
+                },
+                {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Page"
+                },
+                {
+                     "Name":"per_page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Number per Page"
+                }
+                
+              ]
+           },
+           {
+              "MethodName":"GET Leaderboard this month",
+              "Synopsis":"This method allows you to retrieve the leaderboard by month",
+              "HTTPMethod":"GET",
+              "URI":"/leaderboard_this_month.json",
+              "RequiresOAuth":"N",
+              "parameters": [
+              {
+                   "Name":"category",
+                   "Required":"N",
+                   "Default":"",
+                   "Type":"enumerated",
+                   "Description":"Challenge Category",
+                   "EnumeratedList":[
+                       "Heroku",
+                       "Salesforce.com",
+                       "Google",
+                       "Box",
+                       "Mobile",
+                       "Node.Js",
+                       "Ruby",
+                       "JavaScript",
+                       "Java",
+                       "Other"
+                    ]
+                },
+                {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Page"
+                },
+                {
+                     "Name":"per_page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Number per Page"
+                }
+                
               ]
            }
         ]
@@ -36,6 +136,14 @@
       {
          "name":"Challenge Methods",
          "methods":[
+            {
+              "MethodName":"GET Recently completed Challenges",
+              "Synopsis":"This method allows you to retrieve a list of challenges",
+              "HTTPMethod":"GET",
+              "URI":"/challenges/recent.json",
+              "RequiresOAuth":"N",
+               "parameters": []
+            },
             {
                "MethodName":"GET Challenges",
                "Synopsis":"This method allows you to retrieve a list of challenges",
