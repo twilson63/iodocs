@@ -1,4 +1,10 @@
 {
+    "cloudspokes": {
+        "name": "Cloudspokes API",
+        "protocol": "http",
+        "baseURL": "www.cloudspokes.com",
+        "publicPath": ""
+    },
     "klout": {
         "name": "Klout API",
         "protocol": "http",

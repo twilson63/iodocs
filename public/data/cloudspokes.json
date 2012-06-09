@@ -1,0 +1,191 @@
+{
+   "endpoints":[
+     {
+        "name":"Leaderboard Methods",
+        "methods":[
+           {
+              "MethodName":"GET Leaderboard",
+              "Synopsis":"This method allows you to retrieve the leaderboard",
+              "HTTPMethod":"GET",
+              "URI":"/leaderboard.json",
+              "RequiresOAuth":"N",
+              "parameters": [
+              {
+                   "Name":"category",
+                   "Required":"N",
+                   "Default":"",
+                   "Type":"enumerated",
+                   "Description":"Challenge Category",
+                   "EnumeratedList":[
+                       "Heroku",
+                       "Salesforce.com",
+                       "Google",
+                       "Box",
+                       "Mobile",
+                       "Node.Js",
+                       "Ruby",
+                       "JavaScript",
+                       "Java",
+                       "Other"
+                    ]
+                }
+              ]
+           }
+        ]
+      },
+      {
+         "name":"Challenge Methods",
+         "methods":[
+            {
+               "MethodName":"GET Challenges",
+               "Synopsis":"This method allows you to retrieve a list of challenges",
+               "HTTPMethod":"GET",
+               "URI":"/challenges.json",
+               "RequiresOAuth":"N",
+               "parameters": [
+                 {
+                     "Name":"category",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"enumerated",
+                     "Description":"Challenge Category",
+                     "EnumeratedList":[
+                         "Heroku",
+                         "Salesforce.com",
+                         "Google",
+                         "Box",
+                         "Mobile",
+                         "Node.Js",
+                         "Ruby",
+                         "JavaScript",
+                         "Java",
+                         "Other"
+                      ]
+                  },
+                  {
+                      "Name":"show",
+                      "Required":"N",
+                      "Default":"",
+                      "Type":"enumerated",
+                      "Description":"Show Open or Closed Challenges",
+                      "EnumeratedList":[ "open","closed"]
+                  },
+                  {
+                      "Name":"keywords",
+                      "Required":"N",
+                      "Default":"",
+                      "Type":"string",
+                      "Description":"Filter/Search for Challenges"
+                  },
+                  {
+                      "Name":"orderby",
+                      "Required":"N",
+                      "Default":"",
+                      "Type":"enumerated",
+                      "Description":"Order By",
+                      "EnumeratedList":[ "name", "end_date__c", "start_date__c"]
+                  },
+                  {
+                      "Name":"orderby_dir",
+                      "Required":"N",
+                      "Default":"",
+                      "Type":"enumerated",
+                      "Description":"Order Direction",
+                      "EnumeratedList":[ "desc"]
+                  }
+                  
+                  
+               ]
+            },
+            {
+               "MethodName":"GET Challenge",
+               "Synopsis":"This method allows you to retrieve a challenge",
+               "HTTPMethod":"GET",
+               "URI":"/challenges/:id.json",
+               "RequiresOAuth":"N",
+               "parameters": [
+                 {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Challenge Id"
+                  }                
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Member Methods",
+         "methods":[
+            {
+               "MethodName":"GET All Members",
+               "Synopsis":"This method allows you to retrieve a list of members",
+               "HTTPMethod":"GET",
+               "URI":"/members.json",
+               "RequiresOAuth":"N",
+               "parameters": []
+            },
+            {
+               "MethodName":"Search for Members",
+               "Synopsis":"This method allows you to search for member(s)",
+               "HTTPMethod":"GET",
+               "URI":"/members/search.json",
+               "RequiresOAuth":"N",
+               "parameters": [
+                 {
+                    "Name":"keyword",
+                    "Required":"Y",
+                    "Default":"",
+                    "Type":"string",
+                    "Description":"Member name"
+                 }
+               ]
+            },
+            {
+               "MethodName":"Sort By Name",
+               "Synopsis":"This method allows you to retrieve a list of members by name",
+               "HTTPMethod":"GET",
+               "URI":"/members/order_by_name.json",
+               "RequiresOAuth":"N",
+               "parameters": []
+            },            
+            {
+               "MethodName":"Sort By highest win rate",
+               "Synopsis":"This method allows you to retrieve a list of members by highest win rate",
+               "HTTPMethod":"GET",
+               "URI":"/members/order_by_win.json",
+               "RequiresOAuth":"N",
+               "parameters": []
+            },            
+            {
+               "MethodName":"Sort By most active",
+               "Synopsis":"This method allows you to retrieve a list of members by most active",
+               "HTTPMethod":"GET",
+               "URI":"/members/order_by_active.json",
+               "RequiresOAuth":"N",
+               "parameters": []
+            },            
+
+            {
+               "MethodName":"GET Member by id",
+               "Synopsis":"This method allows you to retrieve a member by id",
+               "HTTPMethod":"GET",
+               "URI":"/members/:username.json",
+               "RequiresOAuth":"N",
+               "parameters": [
+                 {
+                    "Name":"username",
+                    "Required":"Y",
+                    "Default":"",
+                    "Type":"string",
+                    "Description":"Member Username"
+                 }
+               ]
+            }
+            
+         ]
+      }
+   ]
+}
+
