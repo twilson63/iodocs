@@ -130,7 +130,50 @@
                 }
                 
               ]
-           }
+           },
+           {
+               "MethodName":"GET Leaderboard for all time",
+               "Synopsis":"This method allows you to retrieve the leaderboard for all time",
+               "HTTPMethod":"GET",
+               "URI":"/leaderboard_all_time.json",
+               "RequiresOAuth":"N",
+               "parameters": [
+               {
+                    "Name":"category",
+                    "Required":"N",
+                    "Default":"",
+                    "Type":"enumerated",
+                    "Description":"Challenge Category",
+                    "EnumeratedList":[
+                        "Heroku",
+                        "Salesforce.com",
+                        "Google",
+                        "Box",
+                        "Mobile",
+                        "Node.Js",
+                        "Ruby",
+                        "JavaScript",
+                        "Java",
+                        "Other"
+                     ]
+                 },
+                 {
+                      "Name":"page",
+                      "Required":"N",
+                      "Default":"",
+                      "Type":"number",
+                      "Description":"Page"
+                 },
+                 {
+                      "Name":"per_page",
+                      "Required":"N",
+                      "Default":"",
+                      "Type":"number",
+                      "Description":"Number per Page"
+                 }
+
+               ]
+            }
         ]
       },
       {
@@ -200,9 +243,14 @@
                       "Type":"enumerated",
                       "Description":"Order Direction",
                       "EnumeratedList":[ "desc"]
+                  },
+                  {
+                       "Name":"page",
+                       "Required":"N",
+                       "Default":"",
+                       "Type":"number",
+                       "Description":"Page"
                   }
-                  
-                  
                ]
             },
             {
@@ -232,7 +280,15 @@
                "HTTPMethod":"GET",
                "URI":"/members.json",
                "RequiresOAuth":"N",
-               "parameters": []
+               "parameters": [
+               {
+                    "Name":"page",
+                    "Required":"N",
+                    "Default":"",
+                    "Type":"number",
+                    "Description":"Page"
+               }
+               ]
             },
             {
                "MethodName":"Search for Members",
@@ -247,7 +303,14 @@
                     "Default":"",
                     "Type":"string",
                     "Description":"Member name"
-                 }
+                 },
+                 {
+                       "Name":"page",
+                       "Required":"N",
+                       "Default":"",
+                       "Type":"number",
+                       "Description":"Page"
+                  }
                ]
             },
             {
@@ -256,7 +319,15 @@
                "HTTPMethod":"GET",
                "URI":"/members/order_by_name.json",
                "RequiresOAuth":"N",
-               "parameters": []
+               "parameters": [
+               {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Page"
+                }
+               ]
             },            
             {
                "MethodName":"Sort By highest win rate",
@@ -264,15 +335,30 @@
                "HTTPMethod":"GET",
                "URI":"/members/order_by_win.json",
                "RequiresOAuth":"N",
-               "parameters": []
-            },            
+               "parameters": [
+               {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Page"
+                }
+               ]
+            },
             {
                "MethodName":"Sort By most active",
                "Synopsis":"This method allows you to retrieve a list of members by most active",
                "HTTPMethod":"GET",
                "URI":"/members/order_by_active.json",
                "RequiresOAuth":"N",
-               "parameters": []
+               "parameters": [
+               {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"number",
+                     "Description":"Page"
+                }]
             },            
 
             {

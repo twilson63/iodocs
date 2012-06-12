@@ -582,18 +582,18 @@ function processRequest(req, res, next) {
 app.dynamicHelpers({
     session: function(req, res) {
     // If api wasn't passed in as a parameter, check the path to see if it's there
- 	    if (!req.params.api) {
- 	    	pathName = req.url.replace('/','');
- 	    	// Is it a valid API - if there's a config file we can assume so
- 	    	fs.stat('public/data/' + pathName + '.json', function (error, stats) {
-   				if (stats) {
-   					req.params.api = pathName;
-   				}
- 			});
- 	    }       
- 	    // If the cookie says we're authed for this particular API, set the session to authed as well
+      if (!req.params.api) {
+        pathName = req.url.replace('/','');
+        // Is it a valid API - if there's a config file we can assume so
+        fs.stat('public/data/' + pathName + '.json', function (error, stats) {
+          if (stats) {
+            req.params.api = pathName;
+          }
+      });
+      }       
+      // If the cookie says we're authed for this particular API, set the session to authed as well
         if (req.params.api && req.session[req.params.api] && req.session[req.params.api]['authed']) {
-         	req.session['authed'] = true;
+          req.session['authed'] = true;
         }
 
         return req.session;
