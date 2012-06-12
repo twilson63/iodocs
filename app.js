@@ -41,7 +41,7 @@ try {
     var config = JSON.parse(configJSON.toString());
 } catch(e) {
     console.error("File config.json not found or is invalid.  Try: `cp config.json.sample config.json`");
-    process.exit(1);
+    //process.exit(1);
 }
 
 //
