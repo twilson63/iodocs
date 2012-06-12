@@ -40,7 +40,14 @@ try {
     var configJSON = fs.readFileSync(__dirname + "/config.json");
     var config = JSON.parse(configJSON.toString());
 } catch(e) {
-    console.error("File config.json not found or is invalid.  Try: `cp config.json.sample config.json`");
+    var config = {
+        title : "I/O Docs - http://github.com/mashery/iodocs",
+        debug : false,
+        sessionSecret : "12345",
+        redis : { database : "0" }
+    }
+    
+    //console.error("File config.json not found or is invalid.  Try: `cp config.json.sample config.json`");
     //process.exit(1);
 }
 
