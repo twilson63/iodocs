@@ -1,5 +1,5 @@
 {
-    "title" : "I/O Docs - http://github.com/mashery/iodocs",
+    "title" : "I/O Docs for Cloudspokes Public API",
     "address": "0.0.0.0",
     "port" : 3000,
     "debug" : false,
